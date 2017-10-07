@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<title>Pizza from Italy</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+<style>
+body, html {height: 100%}
+body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
+.order {display: none}
+.bgimg {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("pizza.jpg");
+    min-height: 90%;
+}
+</style>
+<body>
+<div class="w3-top w3-hide-small">
+  <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
+    <a href="#" class="w3-bar-item w3-button">HOME</a>
+    <a href="#menu" class="w3-bar-item w3-button">PIZZA</a>
+    <a href="#order" class="w3-bar-item w3-button">ORDER</a>
+  </div>
+</div>
+  
+<!-- Header with image -->
+<header class="bgimg w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-bottomleft w3-padding">
+    <span class="w3-tag w3-xlarge">Open 24/7</span>
+  </div>
+  <div class="w3-display-middle w3-center">
+    <span class="w3-text-white w3-hide-small" style="font-size:100px"><br>Pizza from Italy</span>
+    <span class="w3-text-white w3-hide-large w3-hide-medium" style="font-size:60px"><b><br>The true pizza</b></span>
+    <p><a href="#order" class="w3-button w3-xxlarge w3-black">make a order</a></p>
+  </div>
+</header>
+
+<!-- Order Container -->
+<div class="w3-container w3-black w3-padding-64 w3-xxlarge" id="menu">
+  <div class="w3-content">   
+    <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">THE Pizza</h1>
+    <div class="w3-row w3-center w3-border w3-border-dark-grey">
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Pizza');" id="myLink">
+        <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Pizza</div>
+      </a>
+    </div>
+    <div id="Pizza" class="w3-container order w3-padding-32 w3-white">
+      <P>Pizza Size: </P>
+      <MENU>
+        <LI><INPUT type="radio" name="size" value="Small">Small </LI>
+        <LI><INPUT type="radio" name="size" value="Medium">Medium </LI>
+        <LI><INPUT type="radio" name="size" value="Large" checked>Large</LI>
+        <LI><INPUT type="radio" name="size" value="XLarge">X-Large</LI>
+      </MENU>
+
+      <P>Toppings: </P>
+      <P>
+        <INPUT type="checkbox" name="top1" value="Pepperoni" checked> Pepperoni
+        <INPUT type="checkbox" name="top2" value="Onions"> Onions
+        <INPUT type="checkbox" name="top3" value="Mushrooms"> Mushrooms
+        <INPUT type="checkbox" name="top4" value="Sausage"> Sausage 
+        <INPUT type="checkbox" name="top5" value="Tomatoes"> Tomatoes 
+      </P>
+      <P><INPUT type="submit" value="Submit Pizza Now"><INPUT type="reset"> </P>
+    </div>
+  </div>
+</div>
+
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-48 w3-xxlarge">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">WolfGang</a></p>
+</footer>
+
+<script>
+  // Tabbed order
+  function openMenu(evt, menuName) {
+    var i, x, tablinks;
+    x = document.getElementsByClassName("menu");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < x.length; i++) {
+       tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+    }
+    document.getElementById(menuName).style.display = "block";
+    evt.currentTarget.firstElementChild.className += " w3-red";
+  }
+  document.getElementById("myLink").click();
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+<!--
+To use this code on your website, get a free API key from Google.
+Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+-->
+
+</body>
+</html>
